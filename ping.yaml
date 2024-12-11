@@ -2,5 +2,4 @@
  hosts: # Which host your ansible wants to connect
  tasks: # List of tasks/modules/collections
   -name: ping the server
-     ansible.builtin.ping
-     
+     ansible.builtin.ping:
