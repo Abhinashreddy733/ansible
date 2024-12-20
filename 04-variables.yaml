@@ -1,0 +1,18 @@
+#- name: Variables to print
+# hosts: web
+# tasks:
+#  - name: print the information
+#    ansible.builtin.debug:
+#    msg: "Hi I am learning devops course, duration is 120hr, trainer is siva kumar"
+# We can write like above also but as it is not idompatent we are using vars option in ansible to make it simple.
+
+- name: Variables to print
+ hosts: web
+ vars:
+   Course: "Devops with AWS"
+   Duration: "120Hr"
+   Trainer: "Siva kumar"
+ tasks:
+   - name: print the information
+     ansible.biultin.debug:
+     msg: "Hi I am learning {{Course}}, duration is {{Duration}}, and the trainer is {{Trainer}}"

@@ -1,0 +1,8 @@
+- name: variables from files
+  hosts: web # Update the Ip in inventory.ini file
+  vars_files: # Updated variables in vars.yaml file
+  - vars.yaml
+  tasks:
+   - name: print the course info
+    ansible.builtin.debug:
+      msg: "I am learning {{Course}}, duration is: {{Duration}}, and the trainer is: {{Trainer}}"

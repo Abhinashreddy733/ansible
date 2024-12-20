@@ -1,0 +1,6 @@
+-name: variables to print
+ hosts: web
+  types:
+   - name: print the info
+   ansible.builtin.debug:
+    msg: ""Hi i am learnign {{Course}}, duration is: {{Duration}}, trainer is: {{Trainer}}"

@@ -1,0 +1,24 @@
+- name: variables to print
+  hosts: web # Update the Ip in inventory.ini file
+  vars: # play level, all tasks in this play have access to this
+   Course: "Devops"
+   Duration: "120hr"
+   Trainer: "Siva kumar"
+  tasks:
+  - name: print the info
+    ansible.builtin.debug:
+     msg: "Hi i am learning {{Course}}, duration is {{Duration}}, and the trainer is {{Trainer}}"
+  
+  - name: print the info again
+    vars: # task level variables over ride play level
+     Course: "Ansible"
+    ansible.builtin.debug:
+     msg: "Hi i am learning {{Course}}, duration is {{Duration}}, and the trainer is {{Trainer}}"
+            # here in place of course it will print ansible
+  - name: print the info again and again
+    ansible.biultin.debug:
+     msg: "Hi i am learning {{Course}}, duration is {{Duration}}, and the trainer is {{Trainer}}"
+             # here in place of course it will print devops play level
+
+# If we write like this when ever we want to change one particular thing we need to login into it and change.
+# While trying to change we may change some other things too by mistake to avaoid that we are using separate vars.yaml file.
