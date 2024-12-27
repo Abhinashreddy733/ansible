@@ -1,0 +1,10 @@
+- name: variables to print
+  hosts: web
+  tasks:
+   - name: print the info
+    ansible.biultin.debud:
+     msg: "Hello {{Name}}, Good {{Greetings}}"
+
+
+# It will take the arguments directly from command promt. we need to give input while running it.
+# ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 09-vars-from-args.yaml -e Name="Abhi" Greetings="Morning"

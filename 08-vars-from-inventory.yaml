@@ -1,6 +1,8 @@
+# In this i am not giving variables corese etc.. directly i am giving vars in inventory file.
+# with out mentioning here it will take those vars which are provided in inventory file.
 -name: variables to print
  hosts: web
   types:
    - name: print the info
    ansible.builtin.debug:
-    msg: ""Hi i am learnign {{Course}}, duration is: {{Duration}}, trainer is: {{Trainer}}"
+    msg: ""Hi i am learnign: {{Course}}, duration is: {{Duration}}, trainer is: {{Trainer}}"   

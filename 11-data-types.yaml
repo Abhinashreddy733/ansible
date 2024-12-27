@@ -1,0 +1,23 @@
+-name: devops course info
+ hosts: local
+ connection: local  # if we give this it won't search for user_name & pwd as we are giving host as local.
+ vars:
+  Course: "Dev with aws"    # String
+  Duration: 120  # number
+ topics: # list
+   - Linux
+   - Java
+   - Devops
+   - Aws
+   live: true  # boolean
+ tools:  # map/dictionary we are calling it as map/dictionary bcz it consist of tool-key & under key all are values.
+   ci: jenkins  # string
+   cm (Config mgmt): ansible
+   cloud: aws
+   aws:
+    S3
+    IAM
+ tasks:
+  - name: print the info
+   ansible.builtin.debug:
+   msg: "Hi I AM learning {{Course}}, duration is: {{Duration}}, in live stream {{live}}, covered topics are: {{topics}}, and working tools are {{tools}}"
