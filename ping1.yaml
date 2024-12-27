@@ -1,0 +1,5 @@
+- name: ping the server
+  hosts: web #which hosts your ansible wants to connect & Updated the Ip in inventory.ini file
+  tasks: #list of tasks/modules/collections
+  - name: ping the server
+    ansible.builtin.ping:
