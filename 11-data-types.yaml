@@ -10,7 +10,7 @@
    - Devops
    - Aws
    live: true  # boolean
- tools:  # map/dictionary we are calling it as map/dictionary bcz it consist of tool-key & under key all are values.
+ tools:  # map/dictionary we are calling it as map/dictionary bcz it consist of tool->key & under key all are values.
    ci: jenkins  # string
    cm (Config mgmt): ansible
    cloud: aws

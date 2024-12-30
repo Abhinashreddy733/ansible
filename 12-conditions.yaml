@@ -1,0 +1,18 @@
+- name: Check weather the number is less than 10 or not
+  hosts: local
+  connection: local # as we are connecting to ansible node by loging into ansible server
+  vars_promt:
+   - name: my_number
+     promt: Pls enter the number
+     private: fal
+     se # not confidential
+   tasks:
+    - name: print the number
+     ansible.builtin.debug:
+     msg: "Given number is {{my_number}} less than 50"
+     when: my_number | int < 50  # conditional expression
+
+   - name: print the number
+    ansible.builtin.debug:
+    msg: "Given number is {{my_number}} greater than 50"
+    when: my_number | int >= 50 
