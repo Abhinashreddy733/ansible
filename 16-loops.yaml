@@ -1,0 +1,12 @@
+- name: loops demo
+  hosts: local
+  connection: local
+  tasks:
+   - name: print the loop names
+     ansible.builtin.debug:
+     msg: "Hello {{item}}" # iteam is a reserverd key-word and it executes all the values given in loop one by one.
+     loop:
+     - Abhi
+     - Reddy
+     - Madhira
+     - Avhi

@@ -4,8 +4,7 @@
   vars_promt:
    - name: my_number
      promt: Pls enter the number
-     private: fal
-     se # not confidential
+     private: false # not confidential
    tasks:
     - name: print the number
      ansible.builtin.debug:
@@ -16,3 +15,5 @@
     ansible.builtin.debug:
     msg: "Given number is {{my_number}} greater than 50"
     when: my_number | int >= 50 
+
+# The number which we are giving in promt is always considered as string bcz of that we are converting number to int and comparing it.

@@ -1,6 +1,6 @@
 -name: devops course info
  hosts: local
- connection: local  # if we give this it won't search for user_name & pwd as we are giving host as local.
+ connection: local  # if we give this it won't search for user_name & pwd as we are already inside the server even though asking for pwd to avoid we are giving host as local.
  vars:
   Course: "Dev with aws"    # String
   Duration: 120  # number

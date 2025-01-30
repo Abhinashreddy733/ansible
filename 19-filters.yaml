@@ -1,0 +1,51 @@
+- name: Demo on filters/functions
+  hosts: local
+  connection: local
+  tasks:
+   - name: print the default variables
+     ansible.builtin.debug:
+      msg: " I am learning {{course | default ('ansible')}}"
+      # here we are not giving course name any where and giving default name as ansible.
+
+  - name: Convert to upper case
+    vars: 
+      greetings: "Hello Team"
+    ansible.builtin.debug:
+      msg: "{{greetings | upper }}"
+
+  - name: Convert to lowercase    
+    vars:
+     greetings: "Hello Team"
+    ansible.builtin.debug:
+     msg: "{{greetings | lower}}"
+
+  - name: Get the unique values
+    vars:
+     numbers: [1,2,3,45,3,2]
+    ansible.builtin.debug:
+     msg: "{{numbers | unique}}"
+
+  - name: Convert map/dict to list 
+    vars:
+     course:
+      name: "Devops with Aws"
+      duration: 120
+      trainer: "siva kumar"
+    ansible.builtin.debug:
+     msg: "{{course | dict2items }}" # o/p will be in sqare braces
+
+
+   - name: Convert list to map/dict
+    vars:
+     - {"key": "name", "value": "Aws"}
+     - {"key": "duration", "value": 120 }
+     msg: "{{course | items2dict }}"
+     
+
+  - name: check my ip address
+    vars:
+     myip: "356.124.5.1"
+    ansible.builtin.debug:
+     msg: "{{myip | ansible.utils.ipv4}}"
+
+# ansible-playbook -i inventory.ini 19-filters.yaml
