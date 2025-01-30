@@ -12,15 +12,23 @@
      - frontend
    zone: daws81s.online
   tasks:
+  tasks:
+   - name: ansible to install boto3 and botocore
+     ansible.builtin.pip:
+       name:
+       - boto3
+       - botocore
+       executable: pip3.9
+  tasks:
    - name: create ec2 instance 
-     amazon.aws.ec2_instance:
-     name:  "{{ item }}"
-     vpc_subnet_id: "{{ subnet_id }}"
-     instance_type: "{{ t2.micro }}"
-     security_group: "{{ sg_id }}"
-     image_id: "{{ ami_id }}"
-     loop: "{{ instances }}"
-     register: ec2_instances  # previous command o/p is collecting here using register 
+      amazon.aws.ec2_instance:
+      name:  "{{ item }}"
+      vpc_subnet_id: "{{ subnet_id }}"
+      instance_type: "{{ t2.micro }}"
+      security_group: "{{ sg_id }}"
+      image_id: "{{ ami_id }}"
+      loop: "{{ instances }}"
+      register: ec2_instances  # previous command o/p is collecting here using register 
 
 # it is gng to create instances & give some o/p
 
