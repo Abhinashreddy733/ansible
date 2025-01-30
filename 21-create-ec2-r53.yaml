@@ -1,6 +1,7 @@
 - name: crate ec2 and r53 records
  hosts: local
  connection: local
+ become: yes
  vars:
   subnet_id: "subnet-0619ca477d1224499"    # replace with your subnet id
   sg_id: "sg-03faf76d39089cc5d"
