@@ -29,9 +29,6 @@
     loop: "{{ instances }}"
     register: ec2_instances
 
- - name: print the o/p
-    ansible.builtin.debug:
-    msg: "{{ec2-instance}}"
-
-
-# check in session18 IAM topic word doc
+  - name: print the o/p
+     ansible.builtin.debug:
+     msg: "{{ec2-instance}}"
