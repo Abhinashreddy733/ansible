@@ -1,3 +1,4 @@
+---
 - name: Demo on filters/functions
   hosts: local
   connection: local
