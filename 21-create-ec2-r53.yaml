@@ -27,30 +27,4 @@
       security_group: "{{ sg_id }}"
       image_id: "{{ ami_id }}"
     loop: "{{ instances }}"
-    register: ec2_instances # previous command o/p is collecting here using register 
-
-
-
-# it is gng to create instances & give some o/p
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# To connect to aws it need python librabries (botocore & boto3)  --> pip3.9 install boto3 botocore
-# create IAM for authentication (Non human user so there wont be any username & passwd)
-# aws configure (give in command line it will ask for access key & secreat key)
-
-# default region : us-east-1
-  # o/p format: None (just enter)
-	# access key: AKIA2FXAD7ZG4MFHKRBD
-  # Secreat key: MLSW+uer1G2/4q5Tj40ubyikQ3JcTtGV9t9i6Uij
+    register: ec2_instances
